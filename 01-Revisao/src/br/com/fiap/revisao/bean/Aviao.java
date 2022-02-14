@@ -1,5 +1,7 @@
 package br.com.fiap.revisao.bean;
 
+import java.util.List;
+
 //4 Pilares da orientação a objetos
 // Encapsulamento
 // Herança
@@ -8,18 +10,31 @@ package br.com.fiap.revisao.bean;
 
 // Object <- Veiculo <- Aviao
 
+//Herança ? -> É um?
+//Atributo ? -> Tem um?
 public class Aviao extends Veiculo {
 
 	//Atributos
+	//Valores padrões -> números primitivos=0; Referência = null; boolean=false;
 	private int quantidadeAssentos;
 	
+	private CaixaPreta caixaPreta;
+	
 	private TipoAviao tipo;
+	
+	private List<Viagem> viagens;
 	
 	//Construtores
 	public Aviao(String marca, String cor, int quantidadeAssentos, TipoAviao tipo) {
 		super(marca, cor); //Super, invoca o construtor do pai
 		this.quantidadeAssentos = quantidadeAssentos;
 		this.tipo = tipo;
+	}
+	
+	public Aviao(String marca, String cor, int quantidadeAssentos, TipoAviao tipo,
+																List<Viagem> viagens ) {
+		this(marca,cor,quantidadeAssentos,tipo);
+		this.viagens = viagens;
 	}
 	
 	public Aviao() {
@@ -62,6 +77,22 @@ public class Aviao extends Veiculo {
 
 	public void setTipo(TipoAviao tipo) {
 		this.tipo = tipo;
+	}
+
+	public CaixaPreta getCaixaPreta() {
+		return caixaPreta;
+	}
+
+	public void setCaixaPreta(CaixaPreta caixaPreta) {
+		this.caixaPreta = caixaPreta;
+	}
+
+	public List<Viagem> getViagens() {
+		return viagens;
+	}
+
+	public void setViagens(List<Viagem> viagens) {
+		this.viagens = viagens;
 	}
 	
 	
