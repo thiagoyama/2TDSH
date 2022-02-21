@@ -26,7 +26,9 @@ public abstract class Conta {
 	}
 	
 	//Métodos
-	public abstract void depositar(double valor);
+	public void depositar(double valor) {
+		saldo += valor; // saldo = saldo + valor;
+	}
 
 	public abstract void retirar(double valor) throws SaldoInsuficienteException;
 	

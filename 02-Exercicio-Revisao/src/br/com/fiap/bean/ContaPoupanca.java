@@ -28,11 +28,6 @@ public class ContaPoupanca extends Conta implements ContaInvestimento {
 	}
 
 	@Override
-	public void depositar(double valor) {
-		saldo += valor;
-	}
-
-	@Override
 	public void retirar(double valor) throws SaldoInsuficienteException {
 		//Verifica se o saldo é suficiente, retira junto com a taxa
 		if (valor + taxa > saldo) {
