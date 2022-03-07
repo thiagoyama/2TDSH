@@ -1,0 +1,45 @@
+Banco:
+
+TB_PRODUTO
+
+cd_produto number (PK) not null
+nm_produto varchar2(50) not null
+vl_produto number not null
+ds_produto varchar2(200)
+qt_produto number not null
+dt_vencimento date
+dt_fabricacao date
+dt_cadastro date not null
+fl_foto blob
+ds_material varchar2(20) not null
+
+Sequence: SQ_TB_PRODUTO (gerar os valores para a PK)
+
+Exercício:
+
+EAD_TB_CLIENTE
+
+cd_cliente number (PK) not null
+nm_cliente varchar2(80) not null
+dt_nascimento date
+fl_foto blob
+ds_genero varchar2(16) not null, enum no java
+nr_cpf varchar2(20) not null
+ds_tipo number, enum no java (PF, PJ)
+st_ativo number, boolean no java
+dt_cadastro date
+
+chaveAcesso: atributo String no java, mas não é uma coluna na tabela
+
+Sequence: SQ_EAD_TB_CLIENTE
+
+
+
+
+
+
+
+
+
+
+

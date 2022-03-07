@@ -3,21 +3,33 @@
 	<persistence-unit name="CLIENTE_ORACLE" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
+			
+			<!-- Exibe os comandos (log) executados -->
 			<property name="hibernate.show_sql" value="true"/>
+			
+			<!--  Formatar o log (SQL no console) -->			
 			<property name="hibernate.format_sql" value="true" />
-			
-			<!-- create -> apaga e cria as tabelas
-				 update -> atualiza as tabelas de acordo com as classes
-				 validate -> valida se as tabelas estão iguais as classes
+		
+			<!-- Determina o que será executado no banco
+				update -  atualizar (criar) as tabelas no banco de acordo com as classes
+				create - apaga e cria as tabelas no banco de dados de acordo com as classes
+				validate - valida se as classes e a tabelas estão de acordo
 			 -->
-			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.hbm2ddl.auto" value="create"/>
 			
+			<!-- Dialeto, cria a query nativa do banco -->
 			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
 			
+			<!-- Driver do banco -->
 			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
 			
-			<property name="javax.persistence.jdbc.user" value="PF0392"/>
+			<!-- Usuário do banco rmxxxxxx -->
+			<property name="javax.persistence.jdbc.user" value="pf0392"/>
+			
+			<!-- Senha do banco - data de nascimento com 6 digitos-->
 			<property name="javax.persistence.jdbc.password" value="fiap"/>
+			
+			<!-- URL do banco -->
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl"/>
 		</properties>	
 	</persistence-unit>
